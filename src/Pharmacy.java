@@ -1,61 +1,63 @@
-public class Pharmacy extends Medicine {
-    public String Medicine;
-    public String Provider;
-    public String Manufacturer;
-    public String Importer;
+public class Pharmacy {
+
+    private Medicine medicine;
+    private Provider provider;
+    private Manufacturer manufacturer;
+    private Importer importer;
+
+    public Pharmacy(Medicine medicine, Provider provider, Manufacturer manufacturer, Importer importer) {
+        this.medicine = medicine;
+        this.provider = provider;
+        this.manufacturer = manufacturer;
+        this.importer = importer;
+    }
+
     public Pharmacy() {
-        this.Medicine = "";
-        this.Provider = "";
-        this.Manufacturer = "";
-        this.Importer = "";
+        this.medicine = new Medicine();
+        this.provider = new Provider();
+        this.manufacturer = new Manufacturer();
+        this.importer = new Importer();
     }
 
-    public Pharmacy(String medicine, String provider, String manufacturer, String importer) {
-        Medicine = medicine;
-        Provider = provider;
-        Manufacturer = manufacturer;
-        Importer = importer;
+    public Medicine getMedicine() {
+        return medicine;
     }
 
-    public String getMedicine() {
-        return Medicine;
+    public void setMedicine(Medicine medicine) {
+        this.medicine = medicine;
     }
 
-    public void setMedicine(String medicine) {
-        Medicine = medicine;
+    public Provider getProvider() {
+        return provider;
     }
 
-    public String getProvider() {
-        return Provider;
+    public void setProvider(Provider provider) {
+        this.provider = provider;
     }
 
-    public void setProvider(String provider) {
-        Provider = provider;
+    public Manufacturer getManufacturer() {
+        return manufacturer;
     }
 
-    public String getManufacturer() {
-        return Manufacturer;
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    public void setManufacturer(String manufacturer) {
-        Manufacturer = manufacturer;
+    public Importer getImporter() {
+        return importer;
     }
 
-    public String getImporter() {
-        return Importer;
-    }
-
-    public void setImporter(String importer) {
-        Importer = importer;
+    public void setImporter(Importer importer) {
+        this.importer = importer;
     }
 
     @Override
     public String toString() {
         return "Pharmacy{" +
-                "Medicine='" + Medicine + '\'' +
-                ", Provider='" + Provider + '\'' +
-                ", Manufacturer='" + Manufacturer + '\'' +
-                ", Importer='" + Importer + '\'' +
+                "medicine=" + medicine +
+                ", provider=" + provider +
+                ", manufacturer=" + manufacturer +
+                ", importer=" + importer +
                 '}';
     }
 }
